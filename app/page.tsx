@@ -19,12 +19,11 @@ const features = [
 
 export default function Home() {
   return (
-    <main>
-      <div className="ambient" aria-hidden="true">
-        <span className="orb orb-one" />
-        <span className="orb orb-two" />
-        <span className="grid-glow" />
-      </div>
+    <main className="carbon-stage">
+      <div className="carbon-layer carbon-base" aria-hidden="true" />
+      <div className="carbon-layer carbon-spotlight" aria-hidden="true" />
+      <div className="carbon-layer carbon-vignette" aria-hidden="true" />
+      <div className="carbon-layer carbon-grain" aria-hidden="true" />
 
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="Underlying home">

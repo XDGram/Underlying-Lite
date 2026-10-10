@@ -12,18 +12,18 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: "DejaVu Sans", Arial, sans-serif; }
+body { margin: 0; background: #0c0c0c; color: var(--ink); font-family: "DejaVu Sans", Arial, sans-serif; }
 button, a { font: inherit; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; }
 .shell { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
-main { min-height: 100vh; overflow: hidden; position: relative; }
-.ambient { position: absolute; inset: 0 0 auto; height: 900px; pointer-events: none; overflow: hidden; }
-.orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .12; animation: drift 14s ease-in-out infinite alternate; }
-.orb-one { width: 500px; height: 500px; background: var(--accent); top: 80px; right: -180px; }
-.orb-two { width: 380px; height: 380px; background: var(--amber); top: 260px; left: -260px; animation-delay: -5s; }
-.grid-glow { position: absolute; inset: 0; opacity: .16; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, black, transparent 80%); }
-@keyframes drift { to { transform: translate3d(-70px, 35px, 0) scale(1.12); } }
+main { min-height: 100vh; overflow: hidden; position: relative; isolation: isolate; background: #0c0c0c; }
+.carbon-stage { background: #0c0c0c; }
+.carbon-layer { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.carbon-base { background: radial-gradient(circle at 50% 12%, #1c1c1c 0%, #121212 36%, #0c0c0c 68%, #050505 100%); }
+.carbon-spotlight { background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,.14) 0%, transparent 46%); opacity: .5; }
+.carbon-vignette { background-image: radial-gradient(circle at center, transparent 42%, rgba(0,0,0,.55) 100%); }
+.carbon-grain { background-image: radial-gradient(circle at center, rgba(255,255,255,.7) 1px, transparent 1px); background-size: 4px 4px; opacity: .03; }
 
 .nav { height: 92px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); position: relative; z-index: 5; }
 .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px; letter-spacing: .18em; }
