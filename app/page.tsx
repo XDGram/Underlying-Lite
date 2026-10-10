@@ -31,8 +31,8 @@ export default function Home() {
           <span className="brand-mark"><i /><i /><i /></span>
           UNDERLYING
         </a>
-        <div className="nav-links">
-          <a href="#preview">Portfolio</a>
+        <div className="nav-links uiverse-nav-menu">
+          <a className="active" href="#preview">Portfolio</a>
           <a href="#how">How it works</a>
           <a href="#trust">Data &amp; trust</a>
         </div>
