@@ -111,6 +111,19 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .final-cta { padding-block: 80px 150px; text-align: center; }.final-cta h2 { font-size: clamp(44px, 6vw, 72px); }.centered { justify-content: center; }
 footer { border-top: 1px solid var(--line); }.footer-inner { min-height: 120px; display: flex; align-items: center; justify-content: space-between; }.footer-inner p { color: #646a63; font-size: 11px; }.footer-inner > div { display: flex; gap: 28px; color: #858b84; font-size: 11px; }.legal { border-top: 1px solid var(--line); min-height: 64px; display: flex; align-items: center; justify-content: space-between; color: #555b55; font: 400 8px DM Mono, monospace; }.legal p { max-width: 600px; text-align: right; line-height: 1.5; }
 
+.wallet-modal-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(0,0,0,.76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); animation: modal-fade-in .18s ease-out; }
+.wallet-modal { width: min(100%, 440px); position: relative; padding: 38px; border: 1px solid rgba(215,195,160,.3); background: radial-gradient(ellipse at 100% 0%, #29251e 0%, #151515 48%, #101010 100%); box-shadow: 0 28px 100px rgba(0,0,0,.55); animation: modal-rise-in .22s ease-out; }
+.wallet-modal-close { position: absolute; top: 13px; right: 16px; border: 0; background: transparent; color: #aaa79e; font-size: 27px; cursor: pointer; }
+.wallet-modal-mark { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 27px; color: var(--accent); border: 1px solid rgba(215,195,160,.35); background: rgba(215,195,160,.07); }
+.wallet-modal-mark svg { width: 21px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.wallet-modal h2 { margin: 13px 0 14px; font-size: clamp(31px, 6vw, 42px); font-weight: 500; line-height: 1.05; letter-spacing: -.055em; }
+.wallet-modal h2 em { color: var(--accent); font-style: normal; }
+.wallet-modal p { margin: 0; color: #9b9b92; font-size: 13px; line-height: 1.8; }
+.wallet-modal-action { width: 100%; margin-top: 25px; }
+.wallet-modal-note { display: block; margin-top: 17px; text-align: center; color: #77786f; font: 9px DM Mono, monospace; letter-spacing: .03em; }
+@keyframes modal-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-rise-in { from { opacity: 0; transform: translateY(8px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
 @media (max-width: 900px) {
   .nav-links { display: none; }.hero { grid-template-columns: 1fr; padding-top: 70px; }.convergence { margin-top: 50px; }.section-heading { align-items: flex-start; gap: 40px; }.stats-grid { grid-template-columns: 1fr 1fr; }.stats-grid article:nth-child(2) { border-right: 0; }.stats-grid article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }.exposure-row { grid-template-columns: 190px 1fr 60px 85px 32px; gap: 12px; }.feature-grid { grid-template-columns: 1fr; }.feature-grid article { min-height: 300px; }.trust-card { grid-template-columns: 60px 1fr; }.trust-points { grid-column: 2; }
 }

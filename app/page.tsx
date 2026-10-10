@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const Arrow = () => (
   <svg viewBox="0 0 20 20" aria-hidden="true">
     <path d="M4 10h12M11 5l5 5-5 5" />
@@ -18,6 +22,8 @@ const features = [
 ];
 
 export default function Home() {
+  const [walletModalOpen, setWalletModalOpen] = useState(false);
+
   return (
     <main className="carbon-stage">
       <div className="carbon-layer carbon-base" aria-hidden="true" />
@@ -35,7 +41,7 @@ export default function Home() {
           <a href="#how">How it works</a>
           <a href="#trust">Data &amp; trust</a>
         </div>
-        <button className="wallet-button"><span />Connect wallet</button>
+        <button className="wallet-button" onClick={() => setWalletModalOpen(true)}><span />Connect wallet</button>
       </nav>
 
       <section className="hero shell" id="top">
@@ -46,7 +52,7 @@ export default function Home() {
             Discover the companies behind your tokenized stocks—even when you hold them through different issuers.
           </p>
           <div className="hero-actions">
-            <button className="primary-button uiverse-shadow-button">Connect wallet <Arrow /></button>
+            <button className="primary-button uiverse-shadow-button" onClick={() => setWalletModalOpen(true)}>Connect wallet <Arrow /></button>
             <a className="text-button" href="#preview">Explore demo <span>↘</span></a>
           </div>
           <div className="read-only"><Shield /> Read-only analysis · You stay in control</div>
@@ -165,7 +171,7 @@ export default function Home() {
         <span className="kicker">SEE BENEATH THE WRAPPERS</span>
         <h2>Your tokens tell one story.<br /><em>Your exposure tells another.</em></h2>
         <div className="hero-actions centered">
-          <button className="primary-button uiverse-shadow-button">Connect wallet <Arrow /></button>
+          <button className="primary-button uiverse-shadow-button" onClick={() => setWalletModalOpen(true)}>Connect wallet <Arrow /></button>
           <a className="text-button" href="#preview">Explore the demo <span>↘</span></a>
         </div>
       </section>
@@ -178,6 +184,20 @@ export default function Home() {
         </div>
         <div className="shell legal"><span>© 2026 Underlying</span><p>Not investment advice. Tokenized products may carry different legal, redemption, and liquidity terms.</p></div>
       </footer>
+
+      {walletModalOpen && (
+        <div className="wallet-modal-backdrop" role="presentation" onClick={() => setWalletModalOpen(false)}>
+          <section className="wallet-modal" role="dialog" aria-modal="true" aria-labelledby="wallet-modal-title" onClick={(event) => event.stopPropagation()}>
+            <button className="wallet-modal-close" aria-label="Close wallet dialog" onClick={() => setWalletModalOpen(false)}>×</button>
+            <span className="wallet-modal-mark"><Shield /></span>
+            <span className="kicker">READ-ONLY BY DESIGN</span>
+            <h2 id="wallet-modal-title">Your wallet stays<br /><em>in your hands.</em></h2>
+            <p>Live wallet connection is not enabled in this preview yet. The portfolio below uses sample data, so no wallet address or balances have been read.</p>
+            <button className="primary-button uiverse-shadow-button wallet-modal-action" onClick={() => { setWalletModalOpen(false); document.getElementById("preview")?.scrollIntoView({ behavior: "smooth" }); }}>Explore sample portfolio <Arrow /></button>
+            <span className="wallet-modal-note">No signature requested · No transactions · No custody</span>
+          </section>
+        </div>
+      )}
     </main>
   );
 }
