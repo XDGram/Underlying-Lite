@@ -47,7 +47,7 @@ export default function Home() {
             Discover the companies behind your tokenized stocks—even when you hold them through different issuers.
           </p>
           <div className="hero-actions">
-            <button className="primary-button uiverse-fill-button">Connect wallet <Arrow /></button>
+            <button className="primary-button uiverse-shadow-button">Connect wallet <Arrow /></button>
             <a className="text-button" href="#preview">Explore demo <span>↘</span></a>
           </div>
           <div className="read-only"><Shield /> Read-only analysis · You stay in control</div>
@@ -101,7 +101,7 @@ export default function Home() {
 
         <div className="dashboard-card uiverse-glow-card">
           <div className="dashboard-top">
-            <div><span className="live-dot" /> DEMO DATA</div>
+            <div><span className="uiverse-data-loader" /> DEMO DATA</div>
             <span>BNB SMART CHAIN <b>56</b></span>
           </div>
           <div className="stats-grid">
@@ -166,7 +166,7 @@ export default function Home() {
         <span className="kicker">SEE BENEATH THE WRAPPERS</span>
         <h2>Your tokens tell one story.<br /><em>Your exposure tells another.</em></h2>
         <div className="hero-actions centered">
-          <button className="primary-button uiverse-fill-button">Connect wallet <Arrow /></button>
+          <button className="primary-button uiverse-shadow-button">Connect wallet <Arrow /></button>
           <a className="text-button" href="#preview">Explore the demo <span>↘</span></a>
         </div>
       </section>

@@ -46,16 +46,10 @@ h1 em, .final-cta h2 em { color: var(--accent); font-style: normal; }
 .primary-button { background: var(--accent); color: #12150f; border: 1px solid var(--accent); padding: 16px 20px; text-transform: uppercase; letter-spacing: .1em; font: 600 11px DM Mono, monospace; display: inline-flex; align-items: center; gap: 24px; cursor: pointer; transition: color .45s, transform .2s, box-shadow .2s; }
 .primary-button:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(200,247,97,.16); }
 .primary-button svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.5; }
-/* Adapted from UIverse button by nikk7007: https://uiverse.io/nikk7007/nasty-wasp-56 */
-.uiverse-fill-button { position: relative; overflow: hidden; isolation: isolate; }
-.uiverse-fill-button::before,
-.uiverse-fill-button::after { content: ""; position: absolute; width: 120%; height: 130%; background: #11150f; z-index: -1; transition: transform .45s ease-out; }
-.uiverse-fill-button::before { top: -135%; left: -55%; transform: skew(54deg); }
-.uiverse-fill-button::after { bottom: -135%; right: -55%; transform: skew(54deg); }
-.uiverse-fill-button:hover::before { transform: skew(54deg) translate(45%, 80%); }
-.uiverse-fill-button:hover::after { transform: skew(54deg) translate(-45%, -80%); }
-.uiverse-fill-button:hover { color: var(--accent); }
-.uiverse-fill-button:active { filter: brightness(.82); transform: translateY(0) scale(.98); }
+/* UIverse button by felipesntr: https://uiverse.io/felipesntr/yellow-robin-29 */
+.uiverse-shadow-button { background: #0b0d0c; color: var(--ink); border: 2px solid var(--accent); box-shadow: -5px 5px 0 0 var(--accent); transition: transform .4s cubic-bezier(.68,-.55,.265,1.55), box-shadow .4s cubic-bezier(.68,-.55,.265,1.55); }
+.uiverse-shadow-button:hover { color: var(--ink); transform: translate(5px, -5px); box-shadow: -10px 10px 0 0 var(--accent); }
+.uiverse-shadow-button:active { transform: translate(1px, -1px) scale(.98); box-shadow: -6px 6px 0 0 var(--accent); }
 .text-button { font: 500 11px DM Mono, monospace; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid #535751; padding-bottom: 7px; }
 .text-button span { color: var(--accent); margin-left: 8px; }
 .read-only { margin-top: 28px; color: #70766f; font: 400 10px DM Mono, monospace; letter-spacing: .05em; display: flex; align-items: center; gap: 8px; }
@@ -85,7 +79,12 @@ h1 em, .final-cta h2 em { color: var(--accent); font-style: normal; }
 .proof-strip { border-block: 1px solid var(--line); background: rgba(255,255,255,.012); }.proof-inner { height: 93px; display: flex; align-items: center; gap: 30px; }.proof-inner p { font-size: 14px; }.proof-rule { flex: 1; height: 1px; background: var(--line); }.proof-inner .accent-copy { color: var(--accent); }
 .preview-section { padding-block: 125px; }.section-heading { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }.section-heading h2, .trust-card h2, .final-cta h2 { font-size: clamp(38px, 5vw, 62px); letter-spacing: -.05em; line-height: 1.08; font-weight: 500; margin: 16px 0 0; }.section-heading > p { width: 380px; color: #858b84; line-height: 1.7; font-size: 14px; }
 .kicker { color: var(--accent); }
-.dashboard-card { border: 1px solid var(--line); background: #0e110f; box-shadow: 0 30px 80px rgba(0,0,0,.2); }.dashboard-top { height: 53px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border-bottom: 1px solid var(--line); color: #737970; font: 400 9px DM Mono, monospace; letter-spacing: .12em; }.live-dot { width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: var(--accent); margin-right: 8px; }.dashboard-top b { border: 1px solid var(--line); margin-left: 8px; padding: 3px 5px; color: #a7aca5; }
+.dashboard-card { border: 1px solid var(--line); background: #0e110f; box-shadow: 0 30px 80px rgba(0,0,0,.2); }.dashboard-top { height: 53px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border-bottom: 1px solid var(--line); color: #737970; font: 400 9px DM Mono, monospace; letter-spacing: .12em; }.dashboard-top > div { display: flex; align-items: center; }.dashboard-top b { border: 1px solid var(--line); margin-left: 8px; padding: 3px 5px; color: #a7aca5; }
+/* UIverse loader by Shoh2008: https://uiverse.io/Shoh2008/nervous-lizard-11 */
+.uiverse-data-loader { width: 12px; height: 12px; background: rgba(200,247,97,.35); display: inline-block; margin-right: 10px; position: relative; animation: rotationBack 2.4s ease-in-out infinite reverse; }
+.uiverse-data-loader::before { content: ""; position: absolute; inset: 0; background: rgba(200,247,97,.65); transform: rotate(45deg); box-shadow: 0 0 8px rgba(200,247,97,.32); }
+.uiverse-data-loader::after { content: ""; position: absolute; width: 6px; height: 6px; border-radius: 50%; left: 50%; top: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 7px rgba(200,247,97,.7); }
+@keyframes rotationBack { to { transform: rotate(-360deg); } }
 /* Adapted from UIverse glow card by alexruix: https://uiverse.io/alexruix/heavy-elephant-39 */
 .uiverse-glow-card { position: relative; isolation: isolate; }
 .uiverse-glow-card::before { content: ""; position: absolute; inset: -1px; z-index: -2; background: linear-gradient(120deg, rgba(200,247,97,.56), rgba(228,180,94,.16) 38%, rgba(200,247,97,.04) 70%); opacity: .34; transition: opacity .5s ease; }
